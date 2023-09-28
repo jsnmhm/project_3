@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Player Overall Ratings</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div id="chart1"></div>
+    <div id="chart2"></div>
+    <div id="chart3"></div>
+    <script>
+        // Load the chart JSON data and create the chart
+        var chartJson_bar = {{ chart_json_bar|safe }};
+        var chartJson_box = {{ chart_json_box|safe }};
+        var chartJson_comp = {{ chart_json_comp|safe }};
+
+
+        Plotly.newPlot('chart1', chartJson_bar.data, chartJson_bar.layout);
+        Plotly.newPlot('chart2', chartJson_box.data, chartJson_box.layout);
+        Plotly.newPlot('chart3', chartJson_comp.data, chartJson_comp.layout);
+    </script>
+</body>
+</html>
